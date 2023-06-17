@@ -21,8 +21,11 @@
           <i class="ri-translate-2 text-white text-xl ml-6"></i>
           <p class="text-xs text-white font-semibold ml-2">English</p>
         </div>
-        <div class="ml-12 mt-14">
+        <div class="ml-12 mt-14 flex gap-10">
           <Button />
+          <div>
+            <Avatars/>
+          </div>
         </div>
       </div>
     </div>
@@ -30,4 +33,5 @@
 </template>
 <script setup>
 import Button from "./Button.vue";
+import Avatars from "./Avatars.vue";
 </script>

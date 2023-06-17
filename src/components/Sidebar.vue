@@ -25,7 +25,10 @@
         <div class="h-0.5 bg-[#eaeded] mt-10 ml-12 mr-10"></div>
       </div>
     </div>
-
+    
+    <div>
+      <Cta/>
+    </div>
     <div class="flex items-center gap-4 text-gray-500 pl-12 mb-20">
       <i class="ri-logout-box-line text-red-600 text-2xl font-light"></i>
       <p class="font-semibold text-sm">Logout</p>
@@ -38,3 +41,8 @@
   border-right: 1.5px solid #eaeded;
 }
 </style>
+<script setup>
+import Cta from "./Cta.vue"
+
+</script>
+
