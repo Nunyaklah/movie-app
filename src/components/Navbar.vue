@@ -39,8 +39,14 @@
         </div>
       </div>
     </div>
+    <Content/>
   </div>
 </template>
+<script setup>
+import Content from "./Content.Vue"
+</script>
+
+
 <style scoped>
 #search {
   border: 1.5px solid #eaeded;
