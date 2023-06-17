@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-8">
+  <div class="pt-8 w-full">
     <div class="flex justify-between">
       <div class="flex h-[40px] items-center">
         <div>
@@ -22,9 +22,21 @@
           <i class="ri-mic-line pr-5 absolute right-2.5 top-2"></i>
         </div>
       </div>
-      <div class="flex items-center gap-4">
-        <i class="ri-message-3-line text-2xl"></i>
-        <i class="ri-notification-3-line text-2xl"></i>
+      <div class="flex items-center gap-4 mr-20">
+        <div>
+          <i class="ri-message-3-line text-xl"></i>
+        </div>
+        <div class="relative">
+          <i class="ri-notification-3-line text-xl"></i>
+        </div>
+        <div class="border-4 rounded-full border-red-500">
+          <img
+            class="rounded-full"
+            height="35"
+            width="35"
+            src="../assets/images/avatar_1.png"
+          />
+        </div>
       </div>
     </div>
   </div>
