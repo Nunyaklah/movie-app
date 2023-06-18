@@ -1,11 +1,11 @@
 <template>
   <div class="pt-10">
-    <div class="text-xl font-semibold">Friends Watching</div>
+    <div class="text-xl font-semibold">Popular Movies</div>
     <div>
-       <PopolarMovie /> 
+       <PopularMovie /> 
     </div>
   </div>
 </template>
 <script setup>
-import PopolarMovie from "./PopularMovie.vue"
+import PopularMovie from "./PopularMovie.vue"
 </script>

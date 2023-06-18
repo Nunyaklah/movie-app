@@ -1,18 +1,43 @@
 <template>
-    <div id="card" class=" h-36 w-64 bg-gray-50 rounded-3xl mt-6">
-       <img src="" alt="">
-       <div>
-        <p>
-            Spider man
-        </p>
-        <p>
-            Science Fiction, Fantasy
-        </p>
-       </div>
+  <div class="grid grid-cols-4 gap-10 pt-4">
+    <div
+      class="max-w-sm bg-white border border-gray-200 rounded-lg shadow "
+      v-for="movie in movies"
+      :key="movie.imdbID"
+    >
+      <div>
+        <img class="rounded-t-lg" :src="movie.Poster" alt="" />
+      </div>
+      <div class="p-5">
+        <div class="flex gap-4 items-center">
+          <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
+            {{ movie.Title }}
+          </h5>
+          <div class="pb-2">
+            <Ratings />
+          </div>
+        </div>
+        <!-- <p class="mb-1 font-normal text-gray-400 text-sm">Sci-Fi</p> -->
+        <p class="mb-1 font-normal text-gray-400 text-sm">{{movie.Year}}</p>
+        <a
+          href="#"
+          class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300"
+        >
+          More Details
+          <i class="ri-film-line pl-2 text-xl"></i>
+        </a>
+      </div>
     </div>
+  </div>
 </template>
-<style scoped>
-#card {
-  border: 1.5px solid #eaeded;
-}
-</style>
+<script setup>
+import Ratings from "./Ratings.vue";
+import { usePopularMoviesStore } from "../stores/popularMovies";
+import { storeToRefs } from "pinia";
+
+const popularMoviesStore = usePopularMoviesStore();
+
+const { movies } = storeToRefs(popularMoviesStore);
+
+popularMoviesStore.getPopularMovies();
+</script>
