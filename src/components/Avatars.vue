@@ -24,7 +24,7 @@
       <a
         class="flex items-center justify-center w-10 h-10 text-xs font-medium text-white bg-gray-700 border-2 border-white rounded-full hover:bg-gray-600"
         href="#"
-        >+99</a
+        >+54</a
       >
     </div>
   </div>
