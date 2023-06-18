@@ -1,8 +1,8 @@
 <template>
   <div
     id="sidebar"
-    class="h-screen flex flex-col justify-between duration-500"
-    :class="{ 'w-[300px]': open, 'w-[70px]': !open }"
+    class="h-screen flex flex-col justify-between duration-500 fixed left-0 top-0"
+    :class="{ 'w-2/12': open, 'w-[70px]': !open }"
   >
     <div class="pt-8">
       <div class="pb-12" :class="{ 'pl-12': open }">

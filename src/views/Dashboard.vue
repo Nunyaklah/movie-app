@@ -3,6 +3,7 @@
     <Sidebar />
     <Navbar />
   </div>
+
 </template>
 
 <script setup>

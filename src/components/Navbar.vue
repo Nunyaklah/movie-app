@@ -1,6 +1,12 @@
 <template>
-  <div class="pt-8 w-full">
-    <div class="flex justify-between">
+  <div
+    class="pt-10 h-full ml-auto pl-10 mb-10 z-10 flex flex-col duration-500"
+    :class="{ 'w-10/12': open, 'w-11/12': !open }"
+  >
+    <div
+      class="flex justify-between fixed z-10 bg-white duration-500"
+      :class="{ 'w-10/12': open, 'w-11/12': !open }"
+    >
       <div class="flex h-[40px] items-center">
         <div>
           <i
@@ -48,10 +54,11 @@
 <script setup>
 import Content from "./Content.Vue";
 import { useSideBarStore } from "../stores/sidebar";
+import { storeToRefs } from "pinia";
 
 const sidebarStore = useSideBarStore();
 
-
+const { open } = storeToRefs(sidebarStore);
 </script>
 
 <style scoped>

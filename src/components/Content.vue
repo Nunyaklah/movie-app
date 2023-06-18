@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-7 mr-20">
+  <div class="mt-20 mr-20">
     <Banner/>
     <Parties/>
   </div>
