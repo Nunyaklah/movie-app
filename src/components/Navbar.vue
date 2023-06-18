@@ -3,11 +3,14 @@
     <div class="flex justify-between">
       <div class="flex h-[40px] items-center">
         <div>
-          <i class="ri-menu-2-line text-xl"></i>
+          <i
+            class="ri-menu-2-line text-xl cursor-pointer"
+            @click="sidebarStore.setOpen()"
+          ></i>
         </div>
         <div class="pl-10 flex gap-4">
-          <i class="ri-arrow-left-s-line text-xl"></i>
-          <i class="ri-arrow-right-s-line text-xl"></i>
+          <i class="ri-arrow-left-s-line text-xl cursor-pointer"></i>
+          <i class="ri-arrow-right-s-line text-xl cursor-pointer"></i>
         </div>
         <div
           id="search"
@@ -39,13 +42,17 @@
         </div>
       </div>
     </div>
-    <Content/>
+    <Content />
   </div>
 </template>
 <script setup>
-import Content from "./Content.Vue"
-</script>
+import Content from "./Content.Vue";
+import { useSideBarStore } from "../stores/sidebar";
 
+const sidebarStore = useSideBarStore();
+
+
+</script>
 
 <style scoped>
 #search {

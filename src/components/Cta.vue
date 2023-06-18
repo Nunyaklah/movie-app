@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="" :class="{ ' hidden ': !open }">
     <div
       id="dropdown-cta"
       class="p-4 mt-6 rounded-lg bg-red-300 m-6"
@@ -23,3 +23,11 @@
     </div>
   </div>
 </template>
+<script setup>
+import { storeToRefs } from "pinia";
+import { useSideBarStore } from "../stores/sidebar";
+
+const sidebarStore = useSideBarStore();
+
+const { open } = storeToRefs(sidebarStore);
+</script>

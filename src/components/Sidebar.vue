@@ -1,37 +1,67 @@
 <template>
-  <div id="sidebar" class="w-[300px] h-screen flex flex-col justify-between">
+  <div
+    id="sidebar"
+    class="h-screen flex flex-col justify-between duration-500"
+    :class="{ 'w-[300px]': open, 'w-[70px]': !open }"
+  >
     <div class="pt-8">
-      <div class="pb-12 pl-12">
-        <h3 class="text-xl font-bold text-gray-900">
+      <div class="pb-12" :class="{ 'pl-12': open }">
+        <h3 class="text-xl font-bold text-gray-900" v-if="open">
           Toski.<span class="text-lg text-red-600">Movies</span>
         </h3>
+        <i
+          class="ri-movie-2-line text-3xl text-red-600"
+          :class="{ 'pl-4': !open }"
+          v-else
+        ></i>
       </div>
       <div>
-        <h4 class="text-xs font-semibold pb-6 pl-12">News Feed</h4>
+        <h4
+          class="text-xs font-semibold pb-6"
+          :class="{ 'pl-12': open, 'pl-4': !open }"
+        >
+          News Feed
+        </h4>
         <div
-          class="flex items-center gap-4 mb-6 border-l-4 border-red-600 pl-11"
+          class="flex items-center gap-4 mb-6 border-l-4 border-red-600"
+          :class="{ 'pl-12': open, 'pl-4': !open }"
         >
           <i class="ri-compass-3-line text-2xl font-light text-red-600"></i>
-          <p class="font-semibold text-sm">Browse</p>
+          <p class="font-semibold text-sm" :class="{ 'scale-0': !open }">
+            Browse
+          </p>
         </div>
-        <div class="flex items-center gap-4 mb-6 text-gray-500 pl-12">
+        <div
+          class="flex items-center gap-4 mb-6 text-gray-500"
+          :class="{ 'pl-12': open, 'pl-4': !open }"
+        >
           <i class="ri-heart-2-line text-2xl font-light"></i>
-          <p class="font-semibold text-sm">Watchlist</p>
+          <p class="font-semibold text-sm" :class="{ 'scale-0': !open }">
+            Watchlist
+          </p>
         </div>
-        <div class="flex items-center gap-4 mb-6 text-gray-500 pl-12">
+        <div
+          class="flex items-center gap-4 mb-6 text-gray-500"
+          :class="{ 'pl-12': open, 'pl-4': !open }"
+        >
           <i class="ri-calendar-2-line text-2xl font-light"></i>
-          <p class="font-semibold text-sm">Coming Soon</p>
+          <p class="font-semibold text-sm" :class="{ 'scale-0': !open }">
+            Coming Soon
+          </p>
         </div>
         <div class="h-0.5 bg-[#eaeded] mt-10 ml-12 mr-10"></div>
       </div>
     </div>
-    
+
     <div>
-      <Cta/>
+      <Cta />
     </div>
-    <div class="flex items-center gap-4 text-gray-500 pl-12 mb-20">
+    <div
+      class="flex items-center gap-4 text-gray-500 mb-20"
+      :class="{ 'pl-12': open, 'pl-4': !open }"
+    >
       <i class="ri-logout-box-line text-red-600 text-2xl font-light"></i>
-      <p class="font-semibold text-sm">Logout</p>
+      <p class="font-semibold text-sm" :class="{ 'scale-0': !open }">Logout</p>
     </div>
   </div>
 </template>
@@ -42,7 +72,11 @@
 }
 </style>
 <script setup>
-import Cta from "./Cta.vue"
+import Cta from "./Cta.vue";
+import { useSideBarStore } from "../stores/sidebar";
+import { storeToRefs } from "pinia";
 
+const sidebarStore = useSideBarStore();
+
+const { open } = storeToRefs(sidebarStore);
 </script>
-
