@@ -9,11 +9,12 @@ export const useMoviesStore = defineStore("moviesStore", {
     showBannerAndPopularMovies: true,
     searchTerm: "",
     movies: [],
+    movie: ""
   }),
   actions: {
     async getMovies() {
-      this.showMovies = true
-      this.showBannerAndPopularMovies = false  
+      this.showMovies = true;
+      this.showBannerAndPopularMovies = false;
       const params = {
         s: this.searchTerm,
         plot: "full",
@@ -21,6 +22,18 @@ export const useMoviesStore = defineStore("moviesStore", {
       try {
         const response = await axios.get(`${baseUrl}`, { params });
         this.movies = response.data.Search;
+      } catch (error) {
+        const alertStore = useAlertStore();
+        alertStore.error(error.response.data);
+      }
+    },
+    async getMovieDetail(imdbID) {
+      const params = {
+        i: imdbID
+      };
+      try {
+        const response = await axios.get(`${baseUrl}`, { params });
+        this.movie = response.data;
       } catch (error) {
         const alertStore = useAlertStore();
         alertStore.error(error.response.data);

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-14 ">
+  <div class="flex gap-14 bg-white">
     <Sidebar />
     <Navbar />
   </div>

@@ -22,7 +22,8 @@
         <RouterLink :to="`/movie/${movie.imdbID}`">
           <button
             class="inline-flex items-center place-self-end px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300"
-          >
+          @click = moviesStore.getMovieDetail(movie.imdbID)
+            >
             View Details
             <i class="ri-film-line pl-2 text-xl"></i>
           </button>
@@ -34,9 +35,11 @@
 <script setup>
 import Ratings from "./Ratings.vue";
 import { usePopularMoviesStore } from "../stores/popularMovies";
+import { useMoviesStore } from "../stores/movies";
 import { storeToRefs } from "pinia";
 
 const popularMoviesStore = usePopularMoviesStore();
+const moviesStore = useMoviesStore();
 
 const { movies } = storeToRefs(popularMoviesStore);
 

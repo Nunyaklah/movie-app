@@ -1,10 +1,10 @@
 <template>
   <div
-    class="pt-10 ml-auto pl-10 mb-10  flex flex-col duration-500 "
+    class="bg-white z-20 pt-4 top-2 ml-auto pl-10 mb-10  flex flex-col duration-500 "
     :class="{ 'w-10/12': open, 'w-11/12': !open }"
   >
     <div
-      class="flex justify-between fixed z-10  duration-500 "
+      class="flex justify-between fixed z-20  duration-500 bg-white "
       :class="{ 'w-10/12': open, 'w-11/12': !open }"
     >
       <div class="flex h-[50px] items-center">

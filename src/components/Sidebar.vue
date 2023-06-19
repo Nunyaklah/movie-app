@@ -4,17 +4,20 @@
     class="h-screen flex flex-col justify-between duration-500 fixed left-0 top-0"
     :class="{ 'w-2/12': open, 'w-[70px]': !open }"
   >
-    <div class="pt-8">
-      <div class="pb-12" :class="{ 'pl-12': open }">
-        <h3 class="text-xl font-bold text-gray-900" v-if="open">
-          Toski.<span class="text-lg text-red-600">Movies</span>
-        </h3>
-        <i
-          class="ri-movie-2-line text-3xl text-red-600"
-          :class="{ 'pl-4': !open }"
-          v-else
-        ></i>
-      </div>
+    <div class="mt-8 bg-white">
+      <RouterLink to="/">
+        <div class="pb-12" :class="{ 'pl-12': open }">
+          <h3 class="text-xl font-bold text-gray-900" v-if="open">
+            Toski.<span class="text-lg text-red-600">Movies</span>
+          </h3>
+          <i
+            class="ri-movie-2-line text-3xl text-red-600"
+            :class="{ 'pl-4': !open }"
+            v-else
+          ></i>
+        </div>
+      </RouterLink>
+
       <div>
         <h4
           class="text-xs font-semibold pb-6"
