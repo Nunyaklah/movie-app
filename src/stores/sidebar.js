@@ -5,6 +5,7 @@ export const useSideBarStore = defineStore("sidebarStore", {
     open: true
   }),
   actions: {
+    // method to turn sidebar on or off
     setOpen(){
         this.open = !this.open  
     }

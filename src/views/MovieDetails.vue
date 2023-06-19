@@ -1,4 +1,5 @@
 <template>
+  <!-- movie details page  -->
   <div class=" m-4 md:mt-20  md:mr-20">
     <div class="flex gap-8 flex-col md:flex-row">
       <div class="w-full md:w-1/2">
@@ -53,12 +54,17 @@ import Avatars from "../components/Avatars.vue";
 import { useMoviesStore } from "../stores/movies";
 import { storeToRefs } from "pinia";
 import router from "../router/index"
-const moviesStore = useMoviesStore();
 import { useRoute } from "vue-router";
+
+// creating a movies store
+const moviesStore = useMoviesStore();
 
 const { movie } = storeToRefs(moviesStore);
 
+//create route variable 
 const route = useRoute()
+
+//getting id from route params and call getMovieDetail method
 moviesStore.getMovieDetail(route.params.id)
-// console.log(route.params.id)
+
 </script>

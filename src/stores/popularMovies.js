@@ -8,6 +8,7 @@ export const usePopularMoviesStore = defineStore("popularMoviesStore", {
     movies: [],
   }),
   actions: {
+    //fetch movies , used avengers to represent popular movies
     async getPopularMovies() {
       const params = {
         s: "avengers",
