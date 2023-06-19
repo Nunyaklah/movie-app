@@ -1,5 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
-
+import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,18 +7,20 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: () => import("../views/Dashboard.vue"),
+      children: [
+        {
+          path: "/",
+          name: "movie-content",
+          component: () => import("../components/Content.vue"),
+        },
+        {
+          path: "/movie/:id",
+          name: "movieDetails",
+          component: () => import("../views/MovieDetails.vue"),
+        },
+      ],
     },
-    {
-      path: "/movie/:id",
-      name: "movieDetails",
-      component: () => import("../views/MovieDetails.vue"),
-    },
-    {
-      path: "/movies",
-      name: "movies",
-      component: () => import("../views/MovieDetails.vue"),
-    }
   ],
 });
 
-export default router
+export default router;

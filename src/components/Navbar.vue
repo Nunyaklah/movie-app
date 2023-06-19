@@ -50,11 +50,11 @@
         </div>
       </div>
     </div>
-    <Content />
+    <RouterView/>
   </div>
 </template>
 <script setup>
-import Content from "./Content.Vue";
+import { RouterView } from 'vue-router'
 import RoundButton from "./RoundButton.vue"
 import { useSideBarStore } from "../stores/sidebar";
 import {useMoviesStore} from "../stores/movies"

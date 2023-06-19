@@ -2,7 +2,6 @@
   <div class="mt-20 mr-20">
     <Banner/>
     <MovieSection/>
-    <RouterView/>
   </div>
 </template>
 
