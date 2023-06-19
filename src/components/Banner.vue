@@ -1,6 +1,6 @@
 <template>
   <div v-if="!showMovies">
-    <div class="relative">
+    <div class="relative hidden md:block">
       <img
         class="h-[400px] w-full rounded-3xl object-cover"
         src="../assets/images/spider_1.jpeg"

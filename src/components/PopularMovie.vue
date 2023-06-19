@@ -1,15 +1,15 @@
 <template>
-  <div class="grid grid-cols-4 gap-10 pt-4">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pt-4 mx-auto md:w-full">
     <div
       class="max-w-sm bg-white border border-gray-200 rounded-lg shadow grid"
       v-for="movie in movies"
       :key="movie.imdbID"
     >
       <div>
-        <img class="rounded-t-lg" :src="movie.Poster" alt="" />
+        <img class="w-full rounded-t-lg" :src="movie.Poster" alt="" />
       </div>
-      <div class="p-5">
-        <div class="flex gap-4 items-center">
+      <div class="md:p-5 p-3">
+        <div class="flex md:gap-4 gap-2 items-center">
           <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
             {{ movie.Title }}
           </h5>

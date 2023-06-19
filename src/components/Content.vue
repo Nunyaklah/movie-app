@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-20 bg-white mr-20">
+  <div class="md:pt-20  md:mr-20">
     <Banner/>
     <MovieSection/>
   </div>

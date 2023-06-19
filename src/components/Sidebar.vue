@@ -1,8 +1,8 @@
 <template>
   <div
     id="sidebar"
-    class="h-screen flex flex-col justify-between duration-500 fixed left-0 top-0"
-    :class="{ 'w-2/12': open, 'w-[70px]': !open }"
+    class="h-screen md:flex flex-col justify-between duration-500 fixed left-0 top-0 hidden"
+    :class="{ 'md:w-2/12 w-[70px]': open, 'w-[70px]': !open }"
   >
     <div class="mt-8 bg-white">
       <RouterLink to="/">

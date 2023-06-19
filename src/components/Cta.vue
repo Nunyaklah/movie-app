@@ -1,5 +1,5 @@
 <template>
-  <div class="" :class="{ ' hidden ': !open }">
+  <div class="block" :class="{ ' hidden ': !open }">
     <div
       id="dropdown-cta"
       class="p-4 mt-6 rounded-lg bg-red-300 m-6"

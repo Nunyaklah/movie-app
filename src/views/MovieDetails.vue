@@ -1,14 +1,14 @@
 <template>
-  <div class="mt-20 mr-20">
-    <div class="flex gap-8">
-      <div class="w-1/2">
+  <div class=" m-4 md:mt-20  md:mr-20">
+    <div class="flex gap-8 flex-col md:flex-row">
+      <div class="w-full md:w-1/2">
         <img
-          class="h-[700px] w-[600px] object-cover rounded-3xl"
+          class="md:h-[700px] md:w-[600px] object-cover rounded-3xl"
           :src=movie.Poster
           alt=""
         />
       </div>
-      <div class="w-1/2">
+      <div class="w-full md:w-1/2">
         <div>
           <h3 class="text-5xl font-medium mb-8 text-red-600">{{movie.Title}}</h3>
           <p class="text-sm mb-2">
