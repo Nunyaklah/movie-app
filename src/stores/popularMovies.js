@@ -10,7 +10,7 @@ export const usePopularMoviesStore = defineStore("popularMoviesStore", {
   actions: {
     async getPopularMovies() {
       const params = {
-        s: "marvel",
+        s: "avengers",
         plot: "full",
         page: 1
       };

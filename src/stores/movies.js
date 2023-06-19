@@ -1,0 +1,31 @@
+import { defineStore } from "pinia";
+import axios from "axios";
+import { useAlertStore } from "./alerts";
+const baseUrl = `${import.meta.env.VITE_API_URL}`;
+
+export const useMoviesStore = defineStore("moviesStore", {
+  state: () => ({
+    showMovies: false,
+    showBannerAndPopularMovies: true,
+    searchTerm: "",
+    movies: [],
+  }),
+  actions: {
+    async getMovies() {
+      this.showMovies = true
+      this.showBannerAndPopularMovies = false  
+      const params = {
+        s: this.searchTerm,
+        plot: "full",
+      };
+      try {
+        const response = await axios.get(`${baseUrl}`, { params });
+        this.movies = response.data.Search;
+      } catch (error) {
+        const alertStore = useAlertStore();
+        alertStore.error(error.response.data);
+      }
+    },
+  },
+  getters: {},
+});

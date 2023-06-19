@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="!showMovies">
     <div class="relative">
       <img
         class="h-[400px] w-full rounded-3xl object-cover"
@@ -34,4 +34,10 @@
 <script setup>
 import Button from "./Button.vue";
 import Avatars from "./Avatars.vue";
+import { useMoviesStore } from "../stores/movies";
+import { storeToRefs } from "pinia";
+
+const moviesStore = useMoviesStore();
+
+const {showMovies, searchTerm, movies} = storeToRefs(moviesStore)
 </script>

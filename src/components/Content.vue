@@ -1,11 +1,12 @@
 <template>
   <div class="mt-20 mr-20">
     <Banner/>
-    <Parties/>
+    <MovieSection/>
+    <RouterView/>
   </div>
 </template>
 
 <script setup>
 import Banner from "./Banner.vue";
-import Parties from "./Parties.vue"
+import MovieSection from "./MovieSection.vue"
 </script>

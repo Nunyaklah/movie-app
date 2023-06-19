@@ -1,13 +1,13 @@
 <template>
   <div
-    class="pt-10 h-full ml-auto pl-10 mb-10 z-10 flex flex-col duration-500"
+    class="pt-10 ml-auto pl-10 mb-10  flex flex-col duration-500 "
     :class="{ 'w-10/12': open, 'w-11/12': !open }"
   >
     <div
-      class="flex justify-between fixed z-10 bg-white duration-500"
+      class="flex justify-between fixed z-10  duration-500 "
       :class="{ 'w-10/12': open, 'w-11/12': !open }"
     >
-      <div class="flex h-[40px] items-center">
+      <div class="flex h-[50px] items-center">
         <div>
           <i
             class="ri-menu-2-line text-xl cursor-pointer"
@@ -25,11 +25,13 @@
           <i class="ri-search-2-line text-xl pl-5 absolute left-1 top-2"></i>
           <input
             type="search"
+            v-model="searchTerm"
             class="w-full p-3.5 pl-14 text-sm text-gray-900 bg-transparent outline-none focus:ring-red-500 focus:border-red-500"
             placeholder="Start writing . . ."
           />
           <i class="ri-mic-line pr-5 absolute right-2.5 top-2"></i>
         </div>
+        <RoundButton @click = "moviesStore.getMovies()" />
       </div>
       <div class="flex items-center gap-4 mr-20">
         <div>
@@ -53,12 +55,17 @@
 </template>
 <script setup>
 import Content from "./Content.Vue";
+import RoundButton from "./RoundButton.vue"
 import { useSideBarStore } from "../stores/sidebar";
+import {useMoviesStore} from "../stores/movies"
 import { storeToRefs } from "pinia";
-
+import {ref} from "vue"
 const sidebarStore = useSideBarStore();
+const moviesStore = useMoviesStore()
 
 const { open } = storeToRefs(sidebarStore);
+const {showMovies, searchTerm, movies} = storeToRefs(moviesStore)
+
 </script>
 
 <style scoped>
