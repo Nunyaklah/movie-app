@@ -23,9 +23,10 @@
           class="text-xs font-semibold pb-6"
           :class="{ 'pl-12': open, 'pl-4': !open }"
         >
-          News Feed
+          Enjoy  Movies
         </h4>
-        <div
+        <RouterLink to="/">
+          <div
           class="flex items-center gap-4 mb-6 border-l-4 border-red-600"
           :class="{ 'pl-12': open, 'pl-4': !open }"
         >
@@ -34,7 +35,10 @@
             Browse
           </p>
         </div>
-        <div
+        </RouterLink>
+        
+        <RouterLink to="#">
+          <div
           class="flex items-center gap-4 mb-6 text-gray-500"
           :class="{ 'pl-12': open, 'pl-4': !open }"
         >
@@ -43,7 +47,10 @@
             Watchlist
           </p>
         </div>
-        <div
+        </RouterLink>
+        
+        <RouterLink to="#">
+          <div
           class="flex items-center gap-4 mb-6 text-gray-500"
           :class="{ 'pl-12': open, 'pl-4': !open }"
         >
@@ -52,6 +59,8 @@
             Coming Soon
           </p>
         </div>
+        </RouterLink>
+        
         <div class="h-0.5 bg-[#eaeded] mt-10 ml-12 mr-10"></div>
       </div>
     </div>
@@ -59,13 +68,16 @@
     <div>
       <Cta />
     </div>
-    <div
+    <RouterLink to="#">
+      <div
       class="flex items-center gap-4 text-gray-500 mb-20"
       :class="{ 'pl-12': open, 'pl-4': !open }"
     >
       <i class="ri-logout-box-line text-red-600 text-2xl font-light"></i>
       <p class="font-semibold text-sm" :class="{ 'scale-0': !open }">Logout</p>
     </div>
+    </RouterLink>
+    
   </div>
 </template>
 

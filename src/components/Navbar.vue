@@ -35,10 +35,10 @@
       </div>
       <div class="flex items-center gap-4 mr-20">
         <div>
-          <i class="ri-message-3-line text-xl"></i>
+          <i class="ri-message-3-line text-xl cursor-pointer"></i>
         </div>
         <div class="relative">
-          <i class="ri-notification-3-line text-xl"></i>
+          <i class="ri-notification-3-line text-xl cursor-pointer"></i>
         </div>
         <div class="border-4 rounded-full border-red-500">
           <img
