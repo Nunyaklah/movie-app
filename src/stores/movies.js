@@ -39,6 +39,9 @@ export const useMoviesStore = defineStore("moviesStore", {
         alertStore.error(error.response.data);
       }
     },
+    filterMoviesByYear(years){
+      this.movies = this.movies.filter(movie => years.includes(movie.Year))
+    }
   },
   getters: {},
 });

@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pt-4 mx-auto md:w-full">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pt-4 mx-auto md:w-full ">
     <div
       class="max-w-sm bg-white border border-gray-200 rounded-lg shadow grid"
       v-for="movie in movies"

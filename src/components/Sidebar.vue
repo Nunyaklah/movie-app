@@ -63,6 +63,7 @@
         
         <div class="h-0.5 bg-[#eaeded] mt-10 ml-12 mr-10"></div>
       </div>
+      <Filter/>
     </div>
 
     <div>
@@ -87,6 +88,7 @@
 }
 </style>
 <script setup>
+import Filter from "./Filter.vue"
 import Cta from "./Cta.vue";
 import { useSideBarStore } from "../stores/sidebar";
 import { storeToRefs } from "pinia";
